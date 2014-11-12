@@ -20,9 +20,48 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
+@font-face { font-family: nau; src: url("fonts/nautilus-webfont.eot"); src: url("fonts/nautilus-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/nautilus-webfont.woff") format("woff"), url("fonts/nautilus-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: core; src: url("fonts/coresansd67cnheavy-webfont.eot"); src: url("fonts/coresansd67cnheavy-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/coresansd67cnheavy-webfont.woff") format("woff"), url("fonts/coresansd67cnheavy-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: acrom; src: url("fonts/the_northern_block_-_acrom_extrabold-webfont.eot"); src: url("fonts/the_northern_block_-_acrom_extrabold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/the_northern_block_-_acrom_extrabold-webfont.woff") format("woff"), url("fonts/the_northern_block_-_acrom_extrabold-webfont.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+body { font-family: Helvetica, Arial, sans-serif; font-size: 12px; line-height: 1.4; }
 
 .l { *zoom: 1; }
 .l:after { content: " "; display: table; clear: both; }
 .l .l-col1 { float: left; width: 20%; }
 .l .l-col2 { float: right; width: 70%; }
+
+body { background: #f8f8f8; }
+
+.in, .header, .footer { max-width: 1400px; min-width: 1200px; margin: 0 auto; }
+
+.header { height: 760px; position: relative; background: url(../img/header.jpg) no-repeat 50% 50%; -webkit-background-size: cover; -o-background-size: cover; background-size: cover; }
+.header .header__motto { position: absolute; bottom: 0; left: 0; right: 0; height: 93px; line-height: 93px; background: rgba(0, 0, 0, 0.34); text-align: center; color: white; font-size: 48px; font-weight: normal; font-family: "acrom", Arial, sans-serif; }
+.header .header__motto em { color: #ea1d7a; font-style: normal; font-family: "nau", Arial, sans-serif; }
+.header .header__logo { position: absolute; left: 15%; top: 45px; background: url('../img/icons-s9c94cf6d29.png') 0 0 no-repeat; width: 410px; height: 122px; font: 0/0 a; text-shadow: none; color: transparent; cursor: pointer; }
+.header .header__phone { right: 15%; top: 84px; position: absolute; width: 400px; text-align: center; background: rgba(0, 0, 0, 0.34); color: white; font-size: 37px; font-family: "acrom", Arial, sans-serif; }
+
+.nav { text-align: center; margin: 15px 0; }
+.nav ul { list-style: none; }
+.nav li { display: inline-block; }
+.nav a { display: inline-block; font-size: 18px; text-decoration: none; color: #9b8a79; height: 41px; line-height: 41px; padding: 0 16px; }
+.nav a:hover { background: #fafafa; }
+.nav a.is-active { color: white; background: #ea1d79; }
+
+.pictitle { height: 423px; text-align: center; color: white; font-weight: bold; font-size: 120px; -webkit-background-size: cover; -o-background-size: cover; background-size: cover; font-weight: normal; font-family: "core", Arial, sans-serif; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-top: 120px; }
+.pictitle h3 { font-weight: normal; line-height: 1.1; }
+.pictitle.pictitle_moretext { padding-top: 30px; }
+
+.items { *zoom: 1; font-size: 0; width: 964px; margin: 37px auto; }
+.items:after { content: " "; display: table; clear: both; }
+
+.item { display: inline-block; vertical-align: top; width: 220px; height: 220px; margin-right: 1%; overflow: hidden; margin: 0 20px 20px 0; }
+.item img { display: block; width: 100%; }
+
+.motto { text-align: center; font-size: 36px; color: #9b8a79; margin: 40px 0; font-family: "acrom", Arial, sans-serif; }
+.motto em { color: #94d2d0; font-family: "nau", Arial, sans-serif; font-style: normal; }
+
+.footer { padding: 85px 0 100px 0; background: url(../img/footer.jpg) no-repeat 0 0; -webkit-background-size: cover; -o-background-size: cover; background-size: cover; margin-top: 40px; margin-bottom: 20px; }
+.footer .footer__text { width: 80%; margin: 0 auto; font-family: "acrom", Arial, sans-serif; font-size: 48px; color: white; text-align: center; padding: 20px; background: rgba(0, 0, 0, 0.3); }

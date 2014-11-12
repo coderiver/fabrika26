@@ -1,216 +1,142 @@
 // Normally mainpage styles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+body
+	background: #F8F8F8
+.in
+	max-width: 1400px 
+	min-width: 1200px 
+	margin: 0 auto
+
+.header
+	@extend .in
+	height: 760px 
+	position: relative
+	background: url(../img/header.jpg) no-repeat 50% 50%
+	-webkit-background-size: cover 
+	-o-background-size: cover 
+	background-size: cover 
+	.header__motto
+		position: absolute
+		bottom: 0
+		left: 0
+		right: 0
+		height: 93px    
+		line-height: 93px
+		background: rgba(#000, .34) 
+		text-align: center
+		color: #fff
+		font-size: 48px
+		font-weight: normal
+		+acrom
+		em
+			color: #EA1D7A
+			font-style: normal 
+			+nau
+	.header__logo
+		position: absolute
+		left: 15%
+		top: 45px
+		+s(logo)
+		+hide-text
+		cursor: pointer
+	.header__phone
+		right: 15%
+		top: 84px
+		position: absolute
+		width: 400px
+		text-align: center
+		background: rgba(#000,.34)
+		color: #fff
+		font-size: 37px
+		+acrom
+.nav
+	text-align: center
+	margin: 15px 0 
+	ul
+		list-style: none
+	li
+		display: inline-block
+	a
+		display: inline-block
+		font-size: 18px 
+		text-decoration: none
+		color: #9B8A79 
+		height: 41px
+		line-height: 41px
+		padding: 0 16px   
+		&:hover
+			background: #fafafa
+		&.is-active
+			color: #fff 
+			background: #EA1D79 
+
+.pictitle
+	height: 423px
+	text-align: center
+	color: #fff
+	font-weight: bold
+	font-size: 120px   
+	-webkit-background-size: cover 
+	-o-background-size: cover 
+	background-size: cover 
+	font-weight: normal
+	+core
+	+box
+	padding-top: 120px 
+	// letter-spacing: 10px 
+	h3
+		font-weight: normal
+		line-height: 1.1 
+	&.pictitle_moretext
+		padding-top: 30px
+		
+.items
+	+clr
+	font-size: 0 
+	width: 964px 
+	margin: 37px auto
+	 
+.item
+	display: inline-block
+	vertical-align: top
+	width: 220px 
+	height: 220px 
+	margin-right: 1%
+	overflow: hidden
+	margin:  0 20px 20px 0  
+	img
+		display: block
+		width: 100% 
+		
+
+
+.motto
+	text-align: center
+	font-size: 36px 
+	color: #9B8A79 
+	margin: 40px 0 
+	+acrom
+	em
+		color: #94D2D0 
+		+nau
+		font-style: normal 
+
+
+
+.footer
+	padding: 85px 0 100px 0
+	background: url(../img/footer.jpg) no-repeat 0 0 
+	-webkit-background-size: cover 
+	-o-background-size: cover 
+	background-size: cover  
+	@extend .in
+	margin-top: 40px  
+	margin-bottom: 20px 
+	.footer__text
+		width: 80%
+		margin: 0 auto  
+		+acrom
+		font-size: 48px 
+		color: #fff
+		text-align: center
+		padding: 20px  
+		background: rgba(#000, .3) 
