@@ -69,12 +69,54 @@ body
 			color: #fff 
 			background: #EA1D79 
 
+.wat
+	text-align: center	
+	position: relative	
+
+	h3		
+		font-size: 24px 
+		color: #9B8A79 
+		margin: 40px 0
+		font-weight: 100
+
+		span
+			font-size: 30px
+			font-weight: 100
+			
+			strong
+				color: #94D2D0
+				+nau		
+				font-weight: 200
+
+	.slideshow		
+		margin: 0 auto
+	
+	.wat__item
+		display: inline-block
+		vertical-align: top
+		width: 240px
+		text-align: left
+		margin: 0 30px
+		font-size: 13px
+
+		p
+			margin-top: 13px
+			white-space: normal
+
+	.wat__option 
+		position: absolute
+		top: 155px
+		left: 1050px
+		a
+			+s(option)
+			display: block
+
 .pictitle
-	height: 423px
+	margin-top: 90px	
 	text-align: center
 	color: #fff
 	font-weight: bold
-	font-size: 120px   
+	font-size: 120px	
 	-webkit-background-size: cover 
 	-o-background-size: cover 
 	background-size: cover 
@@ -86,6 +128,9 @@ body
 	h3
 		font-weight: normal
 		line-height: 1.1 
+		span
+			position: relative
+			top: -50px
 	&.pictitle_moretext
 		padding-top: 30px
 		
@@ -103,11 +148,11 @@ body
 	margin-right: 1%
 	overflow: hidden
 	margin:  0 20px 20px 0  
+	
 	img
 		display: block
-		width: 100% 
-		
-
+		width: 100%
+		height: 100%		
 
 .motto
 	text-align: center
@@ -120,6 +165,75 @@ body
 		+nau
 		font-style: normal 
 
+.order	
+	overflow: hidden
+
+	h2
+		text-align: center		
+		font-size: 30px 
+		color: #9B8A79 
+		margin: 40px 0
+		font-weight: 100
+
+		strong
+			color: #94D2D0
+			font-size: 30px			
+
+	.order__part
+		width: 970px
+		margin: 0 auto
+		margin-bottom: 150px
+		clear: both
+
+		.field
+			float: left
+			margin-right: 20px
+
+			.field__inputsel
+				margin-top: 10px
+				margin-right: 78px
+				border: 1px solid #dedede
+
+				select
+					height: 20px
+					width: 140px					
+			input
+				border: 1px solid #dedede
+				border-radius: 3px
+				width: 220px
+				height: 32px
+				margin-top: 2px
+
+			textarea
+				width: 456px
+				height: 80px
+				border: 1px solid #dedede
+				margin-top: 10px
+
+			.loadfile				
+				margin-top: 5px
+
+			.filesize
+				color: #ed1279
+				font-weight: bold
+
+		label
+			font-size: 12px
+			font-weight: bold
+
+			span
+				color: #ed1279				
+
+	.order__submit 
+		position: relative
+		left: 100px
+		top: 88px
+
+		input
+			padding: 6px 16px
+			background: #92d2d1
+			border: 1px solid #e5e5e5
+			color: #fff				
 
 
 .footer
@@ -129,7 +243,7 @@ body
 	-o-background-size: cover 
 	background-size: cover  
 	@extend .in
-	margin-top: 40px  
+	margin-top: 10px  
 	margin-bottom: 20px 
 	.footer__text
 		width: 80%
