@@ -68,9 +68,9 @@ body
 		color: #9B8A79 
 		height: 41px
 		line-height: 41px
-		padding: 0 16px   
-		&:hover
-			background: #fafafa
+		padding: 0 16px
+		+transition(all 0.1s linear)
+		&:hover,
 		&.is-active
 			color: #fff 
 			background: #EA1D79 
@@ -94,8 +94,11 @@ body
 				+nau		
 				font-weight: 200
 
-	.slideshow		
+	.slideshow
+		width: 880px !important	
+		height: 340px
 		margin: 0 auto
+		overflow: hidden
 	
 	.wat__item
 		display: inline-block
@@ -104,18 +107,65 @@ body
 		text-align: left
 		margin: 0 30px
 		font-size: 13px
-
+		text-decoration: none
+		color: #000
+		&:hover
+			.wat__top
+				background-color: #ed1279
 		p
 			margin-top: 13px
+			line-height: 1.3
 			white-space: normal
 
 	.wat__option 
-		position: absolute
-		top: 155px
-		left: 1050px
-		a
-			+s(option)
+		.wat__prev,
+		.wat__next
+			position: absolute
+			top: 0
+			bottom: 0
+			width: 100%
+			height: 100%
+			width: 15px
 			display: block
+			z-index: 200
+			&.wat__prev
+				left: 0
+				.wat__btn
+					+rotate(-180)
+			&.wat__next
+				right: 0
+			&:hover
+				.wat__btn
+					visibility: visible
+					opacity: 1
+		.wat__btn
+			position: absolute
+			top: 42px
+			+s(option)
+			opacity: 0
+			visibility: hidden
+			display: block
+			+transition(all 0.1s linear)
+	.wat__top
+		width: 220px
+		height: 118px
+		line-height: 118px
+		text-align: center
+		color: #fff
+		font-size: 22px
+		text-decoration: none
+		background: #92d2d1
+		display: block
+		+transition(all 0.2s linear)
+		+acrom
+	.wat__text
+		display: block
+		+box
+	.wat__block
+		line-height: 1.2
+		vertical-align: middle
+		display: inline-block
+
 
 .pictitle
 	margin-top: 90px	
@@ -159,11 +209,16 @@ body
 		.item__bg
 			opacity: 1
 			visibility: visible
-	
+		img
+			transform: scale(1.2)
+			-moz-transform: scale(1.2)
+			-webkit-transform: scale(1.2)
+			-o-transform: scale(1.2)
 	img
 		display: block
 		width: 100%
 		height: 100%
+		+transition(all 0.4s linear)
 	.item__bg
 		position: absolute
 		top: 0
@@ -177,7 +232,7 @@ body
 		visibility: hidden
 		cursor: pointer
 		background-color: rgba(146,210,209,.7)
-		+transition(all 0.1s linear)
+		+transition(all 0.4s linear)
 		+box
 		+hl
 		span
@@ -233,6 +288,16 @@ body
 		+s(arrow-close)
 	&.ico_next
 		+s(arrow-left)
+	&.ico_puzzle
+		+s(puzzle)
+	&.ico_letters
+		+s(letters)
+	&.ico_time
+		+s(timer)
+	&.ico_gift
+		+s(gift)
+	&.ico_cutting
+		+s(cutting)
 
 .motto
 	text-align: center
@@ -240,8 +305,9 @@ body
 	color: #9B8A79 
 	margin: 40px 0 
 	+acrom
-	em
+	a
 		color: #94D2D0 
+		text-decoration: none
 		+nau
 		font-style: normal 
 

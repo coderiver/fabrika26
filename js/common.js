@@ -1,5 +1,7 @@
 head.ready(function() {
 
+
+	//gallery
 	var gallery = $('.js-gallery'),
 		gallery_slider_all = gallery.find('.slider');
 	gallery.each(function () {
@@ -40,6 +42,24 @@ head.ready(function() {
 			gallery_slider.slideUp();
 		});
 	});
-		
+	
+	//slideshow
+	$(".slideshow").cycle({
+		fx: "carousel",
+		slides: ".wat__item",
+		timeout: 0,
+		visible: 3,
+		next: ".wat__next",
+		prev: ".wat__prev"
+	});
 
+	// scrollTop
+	$(".motto a").click(function (){
+		var page = $(this).attr("href");
+
+		$('html, body').animate({
+			scrollTop: $(page).offset().top + 20
+		}, 600);
+		return false;
+	});
 });
