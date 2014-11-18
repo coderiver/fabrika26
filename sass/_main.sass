@@ -61,9 +61,10 @@ body
 		list-style: none
 	li
 		display: inline-block
+		font-size: 18px 
+		color: #9B8A79 
 	a
 		display: inline-block
-		font-size: 18px 
 		text-decoration: none
 		color: #9B8A79 
 		height: 41px
@@ -74,6 +75,10 @@ body
 		&.is-active
 			color: #fff 
 			background: #EA1D79 
+	.nav__disabled
+		line-height: 41px
+		padding: 0 16px
+		text-transform: uppercase
 
 .wat
 	text-align: center	
@@ -134,17 +139,21 @@ body
 					+rotate(-180)
 			&.wat__next
 				right: 0
+			&.disabled
+				.wat__btn
+					cursor: default
+					+opacity(0.5)
+				&:hover
+					+opacity(0.5)
 			&:hover
 				.wat__btn
-					visibility: visible
-					opacity: 1
+					+opacity(1)
 		.wat__btn
 			position: absolute
 			top: 42px
 			+s(option)
-			opacity: 0
-			visibility: hidden
 			display: block
+			+opacity(0.7)
 			+transition(all 0.1s linear)
 	.wat__top
 		width: 220px

@@ -45,16 +45,17 @@ head.ready(function() {
 	
 	//slideshow
 	$(".slideshow").cycle({
-		fx: "carousel",
-		slides: ".wat__item",
+		fx: 'carousel',
 		timeout: 0,
-		visible: 3,
-		next: ".wat__next",
-		prev: ".wat__prev"
+		carouselVisible: 3,
+		slides: '.wat__item',
+		next: '.wat__next',
+		prev: '.wat__prev',
+		allowWrap: false
 	});
 
 	// scrollTop
-	$(".motto a").click(function (){
+	$(".motto a, .wat__item, .js-nav-link").click(function (){
 		var page = $(this).attr("href");
 
 		$('html, body').animate({

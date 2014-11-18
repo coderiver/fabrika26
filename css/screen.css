@@ -44,9 +44,10 @@ body { background: #f8f8f8; }
 
 .nav { text-align: center; margin: 15px 0; }
 .nav ul { list-style: none; }
-.nav li { display: inline-block; }
-.nav a { display: inline-block; font-size: 18px; text-decoration: none; color: #9b8a79; height: 41px; line-height: 41px; padding: 0 16px; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
+.nav li { display: inline-block; font-size: 18px; color: #9b8a79; }
+.nav a { display: inline-block; text-decoration: none; color: #9b8a79; height: 41px; line-height: 41px; padding: 0 16px; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
 .nav a:hover, .nav a.is-active { color: white; background: #ea1d79; }
+.nav .nav__disabled { line-height: 41px; padding: 0 16px; text-transform: uppercase; }
 
 .wat { text-align: center; position: relative; }
 .wat h3 { font-size: 24px; color: #9b8a79; margin: 40px 0; font-weight: 100; }
@@ -60,8 +61,10 @@ body { background: #f8f8f8; }
 .wat .wat__option .wat__prev.wat__prev, .wat .wat__option .wat__next.wat__prev { left: 0; }
 .wat .wat__option .wat__prev.wat__prev .wat__btn, .wat .wat__option .wat__next.wat__prev .wat__btn { -ms-transform: rotate(-180deg); -webkit-transform: rotate(-180deg); transform: rotate(-180deg); }
 .wat .wat__option .wat__prev.wat__next, .wat .wat__option .wat__next.wat__next { right: 0; }
-.wat .wat__option .wat__prev:hover .wat__btn, .wat .wat__option .wat__next:hover .wat__btn { visibility: visible; opacity: 1; }
-.wat .wat__option .wat__btn { position: absolute; top: 42px; background: url('../img/icons-s9a72103339.png') 0 -413px no-repeat; width: 15px; height: 45px; opacity: 0; visibility: hidden; display: block; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
+.wat .wat__option .wat__prev.disabled .wat__btn, .wat .wat__option .wat__next.disabled .wat__btn { cursor: default; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+.wat .wat__option .wat__prev.disabled:hover, .wat .wat__option .wat__next.disabled:hover { filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
+.wat .wat__option .wat__prev:hover .wat__btn, .wat .wat__option .wat__next:hover .wat__btn { filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false); opacity: 1; }
+.wat .wat__option .wat__btn { position: absolute; top: 42px; background: url('../img/icons-s9a72103339.png') 0 -413px no-repeat; width: 15px; height: 45px; display: block; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70); opacity: 0.7; -moz-transition: all 0.1s linear; -o-transition: all 0.1s linear; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
 .wat .wat__top { width: 220px; height: 118px; line-height: 118px; text-align: center; color: white; font-size: 22px; text-decoration: none; background: #92d2d1; display: block; -moz-transition: all 0.2s linear; -o-transition: all 0.2s linear; -webkit-transition: all 0.2s linear; transition: all 0.2s linear; font-family: "acrom", Arial, sans-serif; }
 .wat .wat__text { display: block; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .wat .wat__block { line-height: 1.2; vertical-align: middle; display: inline-block; }
