@@ -76,6 +76,9 @@ body { background: #f8f8f8; }
 
 .items { *zoom: 1; font-size: 0; width: 964px; margin: 37px auto; }
 .items:after { content: " "; display: table; clear: both; }
+.items.js-tab-cont { display: none; }
+.items.js-tab-cont p { text-align: center; font-size: 16px; }
+.items.is-active { display: block; }
 
 .item { position: relative; display: inline-block; vertical-align: top; width: 220px; height: 220px; margin-right: 1%; overflow: hidden; margin: 0 20px 20px 0; }
 .item:hover .item__bg { opacity: 1; visibility: visible; }
