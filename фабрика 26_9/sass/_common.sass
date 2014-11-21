@@ -1,0 +1,336 @@
+// # SHORT HOWTO
+// ## Sprites
+//     .whatever
+//          +sized-sprite($icons, coderiver) //or
+// 			+s(codedby) //gets default value for spritemap as $icons
+// ### animation example
+//     +include keyframes(rotate)
+//        from
+//           +rotate(0)
+//        to
+//           +rotate(360)
+// ## animation usage
+//     body:hover
+// 	    +animation(rotate 200s linear infinite)
+// ## animations easing, see easings.net for full list and examples, tnx @ai
+//     transition: all 1.2s ceaser($ease-in)
+// ## gradient example
+//     +background-image(linear-gradient(#232323, #5c5c5c));
+//     +g(#232323, #5c5c5c);
+//	   horizontal
+//     +gh(#232323, #5c5c5c);
+// ## making bw-images
+//     img
+//			@extend %gray
+// ## predefined media-queries: https://github.com/paranoida/sass-mediaqueries
+//     +min-screen(320)
+//			display: none
+// +max-screen(1000), +iphone5, +iphone4, +ipad-retina, +ipad, +hdpi - also available
+//
+// ## use cycles
+//     @for $i from 1 through 3
+//       .item-#{$i}
+//			width: 2em * $i;
+//     @each $s in a,b,c
+// 	    	#{$s}
+//				display: none
+// ## fonts 
+// Save fonts to /css/fonts, after that write (eot, woff, ttf):
+// +font(book, cytiapro-black-webfont)  
+// =book
+// 	font-family: "book", Arial, sans-serif 
+// insert pics into css
+// div
+// 	+pic("blabla.png")
+// span
+// 	+png(blabla)
+// p
+// 	+jpg(bla)
+
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic-ext") 
+=os
+	font-family: "Open Sans", sans-serif
+
+
+body
+	font-size: 18px
+	line-height: 1.4
+	font-weight: 400
+	+os
+
+a
+	text-decoration: none
+
+// common blocks      
+
+//wrap
+.wrap
+	&.wrap_gray
+		height: 218px
+		border-bottom: 1px solid #b1b5b4
+		background: url(../img/bg-nav.png) repeat-x 0 0
+		background-size: cover
+	&.wrap_form
+		padding: 50px 0 67px
+		background: #f5f5f5
+
+//container
+.container
+	margin: 0 auto
+	width: 940px
+	+box
+	+clr
+
+//title
+.title
+	text-align: center
+	font-size: 36px
+	font-weight: 700
+
+//btn
+.btn
+	width: 100%
+	height: 54px
+	color: #fff
+	line-height: 54px
+	font-weight: 700
+	font-size: 18px
+	text-align: center
+	+border-radius(2px)
+	background: #1c2769
+	display: inline-block
+	&:hover
+		background: rgba(#1c2769, 0.8)
+
+//ico
+.ico
+	display: inline-block
+	&.ico_1
+		+s(ico-1)
+	&.ico_2
+		+s(ico-2)
+	&.ico_3
+		+s(ico-3)
+	&.ico_4
+		+s(ico-4)
+	&.ico_5
+		+s(ico-5)
+	&.ico_6
+		+s(ico-6)
+
+//header
+.header
+	padding-top: 25px
+	height: 477px
+	color: #fff
+	background: url(../img/bg.png) no-repeat 50% 0, #060203
+	+box
+	.header__top
+		margin-bottom: 50px
+		+clr
+	.header__left
+		float: left
+	.header__name
+		width: 236px
+	.header__name,
+	.logo
+		vertical-align: top
+		display: inline-block
+	.header__right
+		float: right
+		text-align: right
+		width: 227px
+	.header__title
+		font-size: 48px
+	.header__text,
+	.header__title
+		text-align: center
+
+//class group bold	
+.header__name,
+.header__text,
+.header__title,
+.phone,
+.address,
+.howtodrive
+	font-weight: 700
+
+//logo
+.logo
+	margin-right: 20px
+	+s(logo)
+
+//phone
+.phone
+	margin-top: 10px
+	font-size: 26px
+
+//address howtodrive
+.address,
+.howtodrive
+	font-size: 12px
+
+//howtodrive
+.howtodrive
+	position: relative
+	padding-left: 19px
+	color: #bdc1bb
+	height: 24px
+	line-height: 24px
+	display: inline-block
+	&:before
+		position: absolute
+		content: ''
+		top: 2px
+		left: 0
+		+s(marker-small)
+
+//callback
+.callback
+	font-size: 13px
+
+//tab
+.tab
+	.container_tab
+		padding: 40px 0 30px
+	.tab__nav
+		font-size: 0
+		text-align: center
+		display: table
+		li
+			display: table-cell
+			&.is-active,
+			&:hover
+				a
+					background: #1c2769
+					&:before
+						display: block
+		a
+			position: relative
+			padding: 25px 15px 0
+			height: 218px
+			font-size: 15px
+			color: #fff
+			display: block
+			+box
+			&:before
+				position: absolute
+				content: ''
+				bottom: -10px
+				left: 50%
+				margin-left: -11px
+				+s(arr-bottom)
+				display: none
+	.tab__text
+		min-height: 48px
+	.tab__ico
+		height: 120px
+		line-height: 120px
+		.ico
+			vertical-align: middle
+	.tab__cont
+		min-height: 480px
+		display: none
+		+box
+		&.is-active
+			display: block
+	.tab__wrap
+		padding: 40px 0
+		+clr
+	.tab__left
+		float: left
+		img
+			display: block
+	.tab__right
+		float: right
+	.tab__left, .tab__right
+		width: 50%
+	.tab__title
+		margin-bottom: 20px
+		font-size: 24px
+		font-weight: 700
+	.tab__list
+		li
+			margin-bottom: 3px
+			list-style-type: none
+
+//cost
+.cost
+	padding: 0 10px
+	text-align: center
+	font-size: 14px 
+	.cost__text-blue
+		margin-top: 10px
+		color: #2b7cbf
+		font-size: 18px
+
+//table
+.table
+	margin: 24px auto 34px
+	width: 912px
+	+box-shadow(3px 4px 49px rgba(16,16,16,.19))
+	tr
+		border-bottom: 1px solid #f5f5f5
+		th
+			color: #fff
+			height: 65px
+			line-height: 65px
+			font-weight: 700
+			background: #606796
+		td
+			height: 60px
+			line-height: 60px
+		th, td
+			text-align: center
+			+box
+			&:first-child
+				padding-left: 34px
+				width: 290px
+				text-align: left
+
+//form
+.form
+	margin: 0 auto
+	width: 416px
+	.form__text
+		margin: 10px 0 45px
+		text-align: center
+		font-weight: 700
+	.form__field
+		margin-bottom: 12px
+		height: 68px
+		+border-radius(2px)
+		border: 2px solid #d0cece
+		background-color: #fff
+		+box
+		&.form__field_load
+			line-height: 60px
+	input
+		padding: 0 15px
+		height: 100%
+		width: 100%
+		font-size: 24px
+		background-color: #fff
+		display: inline-block
+		+box
+	.loadfile
+		height: 26px
+		font-size: 17px
+		vertical-align: middle
+
+.map
+	width: 100%
+	height: 512px
+	.ymaps-2-1-17-copyright__wrap
+		display: none
+
+//footer
+.footer
+	padding: 34px 0
+	color: #535353
+	font-size: 11px
+	.container
+		padding-right: 20px
+	.footer__copy
+		margin-bottom: 15px
+		font-size: 14px
